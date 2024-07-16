@@ -12,11 +12,8 @@
 // ==/UserScript==
 
 let GAME_SETTINGS = {
-    minBombHits: Math.floor(0), // Jumlah minimum pengepresan bom dalam persentase / Persentase kemungkinan pengepresan bom
-    minIceHits: Math.floor(0), // Jumlah minimum hit beku
-    flowerSkipPercentage: Math.floor(100), // Persentase kemungkinan mengklik bunga
-    minDelayMs: 1000, // Penundaan minimum antar tindakan dalam milidetik
-    maxDelayMs: 5000, // Penundaan maksimum antar tindakan dalam milidetik
+    minDelayMs: 300, // Penundaan minimum antar tindakan dalam milidetik
+    maxDelayMs: 800, // Penundaan maksimum antar tindakan dalam milidetik
 };
 
 let isGamePaused = false;
@@ -56,28 +53,17 @@ try {
     }
 
     function processFlower(element) {
-        const shouldSkip = Math.random() < (GAME_SETTINGS.flowerSkipPercentage / 100);
-        if (shouldSkip) {
-            gameStats.flowersSkipped++;
-        } else {
             gameStats.score++;
             clickElement(element);
-        }
+
     }
 
     function processBomb(element) {
-        if (gameStats.bombHits < GAME_SETTINGS.minBombHits) {
-            gameStats.score = 0;
-            clickElement(element);
             gameStats.bombHits++;
-        }
     }
 
     function processIce(element) {
-        if (gameStats.iceHits < GAME_SETTINGS.minIceHits) {
-            clickElement(element);
             gameStats.iceHits++;
-        }
     }
 
     function clickElement(element) {
@@ -106,11 +92,9 @@ try {
     }
 
     function resetGameSettings() {
-    minBombHits: Math.floor(0), // Jumlah minimum pengepresan bom dalam persentase / Persentase kemungkinan pengepresan bom
-    minIceHits: Math.floor(0), // Jumlah minimum hit beku
-    flowerSkipPercentage: Math.floor(100), // Persentase kemungkinan mengklik bunga
-    minDelayMs: 1000, // Penundaan minimum antar tindakan dalam milidetik
-    maxDelayMs: 5000, // Penundaan maksimum antar tindakan dalam milidetik
+        GAME_SETTINGS = {
+            minDelayMs: 300, // Penundaan minimum antar tindakan dalam milidetik
+            maxDelayMs: 800, // Penundaan maksimum antar tindakan dalam milidetik
         };
     }
 
