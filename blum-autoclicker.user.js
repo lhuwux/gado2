@@ -12,11 +12,11 @@
 // ==/UserScript==
 
 let GAME_SETTINGS = {
-    minBombHits: Math.floor(Math.random() * 2), // Jumlah minimum pengepresan bom dalam persentase / Persentase kemungkinan pengepresan bom
-    minIceHits: Math.floor(Math.random() * 2) + 2, // Jumlah minimum hit beku
-    flowerSkipPercentage: Math.floor(Math.random() * 11) + 15, // Persentase kemungkinan mengklik bunga
-    minDelayMs: 300, // Penundaan minimum antar tindakan dalam milidetik
-    maxDelayMs: 800, // Penundaan maksimum antar tindakan dalam milidetik
+    minBombHits: Math.floor(0), // Jumlah minimum pengepresan bom dalam persentase / Persentase kemungkinan pengepresan bom
+    minIceHits: Math.floor(0), // Jumlah minimum hit beku
+    flowerSkipPercentage: Math.floor(100), // Persentase kemungkinan mengklik bunga
+    minDelayMs: 1000, // Penundaan minimum antar tindakan dalam milidetik
+    maxDelayMs: 5000, // Penundaan maksimum antar tindakan dalam milidetik
 };
 
 let isGamePaused = false;
@@ -106,12 +106,11 @@ try {
     }
 
     function resetGameSettings() {
-        GAME_SETTINGS = {
-            minBombHits: Math.floor(Math.random() * 2),  // Jumlah minimum pengepresan bom dalam persentase / Persentase kemungkinan pengepresan bom
-            minIceHits: Math.floor(Math.random() * 2) + 2, // Jumlah minimum hit beku
-            flowerSkipPercentage: Math.floor(Math.random() * 11) + 15, // Persentase kemungkinan mengklik bunga
-            minDelayMs: 300, // Penundaan minimum antar tindakan dalam milidetik
-            maxDelayMs: 800, // Penundaan maksimum antar tindakan dalam milidetik
+    minBombHits: Math.floor(0), // Jumlah minimum pengepresan bom dalam persentase / Persentase kemungkinan pengepresan bom
+    minIceHits: Math.floor(0), // Jumlah minimum hit beku
+    flowerSkipPercentage: Math.floor(100), // Persentase kemungkinan mengklik bunga
+    minDelayMs: 1000, // Penundaan minimum antar tindakan dalam milidetik
+    maxDelayMs: 5000, // Penundaan maksimum antar tindakan dalam milidetik
         };
     }
 
